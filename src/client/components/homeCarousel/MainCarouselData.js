@@ -1,0 +1,26 @@
+export const carouselData=[
+    {
+        image:"https://codewithsadee.github.io/anon-ecommerce-website/assets/images/banner-1.jpg",
+        path:"",
+    },
+    {
+        image:"https://codewithsadee.github.io/anon-ecommerce-website/assets/images/banner-3.jpg",
+        path:"",
+    },
+    {
+        image:"https://codewithsadee.github.io/anon-ecommerce-website/assets/images/banner-1.jpg",
+        path:"",
+    },
+    {
+        image:"https://codewithsadee.github.io/anon-ecommerce-website/assets/images/banner-3.jpg",
+        path:"",
+    },
+    {
+        image:"https://codewithsadee.github.io/anon-ecommerce-website/assets/images/banner-1.jpg",
+        path:"",
+    },
+    {
+        image:"https://codewithsadee.github.io/anon-ecommerce-website/assets/images/banner-3.jpg",
+        path:"",
+    },
+]
