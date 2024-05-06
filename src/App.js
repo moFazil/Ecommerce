@@ -1,8 +1,8 @@
-import { Route, Routes } from 'react-router-dom';
+// import { Route, Routes } from 'react-router-dom';
 import Footer from './client/components/footer/Footer';
 import Navigation from './client/components/navigation/Navigation';
 import Product from './client/components/products/Product';
-import { HomePage } from './client/pages/homePage/HomePage';
+// import { HomePage } from './client/pages/homePage/HomePage';
 
 function App() {
   return (
@@ -11,10 +11,12 @@ function App() {
       <Navigation/>
       </div>
       <div>
-        <Routes>
+        {/* <Routes>
           <Route path='/' element={<HomePage/>}/>
           <Route path='/product' element={<Product/>}/>
-        </Routes>
+        </Routes> */}
+        {/* <HomePage/> */}
+        <Product/>
       
       </div>
       <Footer/>

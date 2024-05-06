@@ -1,7 +1,7 @@
 import React from "react";
-import "./ProductCard.css"
+import "./ProductCard.css";
 
-const ProductCard = ({product}) => {
+const ProductCard = ({ product }) => {
   return (
     <div className="productCard w-[15rem] m-3 cursor-pointer transition-all">
       <div className=" h-[20rem]">
@@ -17,7 +17,9 @@ const ProductCard = ({product}) => {
         <div className=" flex items-center space-x-2">
           <p className=" font-semibold">{product.discountedPrice}</p>
           <p className=" line-through opacity-50">{product.price}</p>
-          <p className=" font-semibold text-red-600">{product.discountPersent}% off</p>
+          <p className=" font-semibold text-red-600">
+            {product.discountPersent}% off
+          </p>
         </div>
       </div>
     </div>
