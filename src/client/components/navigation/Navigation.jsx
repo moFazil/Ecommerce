@@ -222,11 +222,10 @@ export default function Navigation() {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <span className="sr-only">Your Company</span>
                 <img
                   src="https://ik.imagekit.io/orm5ahbvhz/D-similar/D%20similar.png?updatedAt=1714729885187"
                   alt="logo"
-                  className="h-8 w-14 mr-2"
+                  className="h-10 w-18 mr-2"
                 />
               </div>
 

@@ -10,7 +10,7 @@ const Footer = () => {
             sx={{bgcolor:"black",color:"white",py:3}}
         >
             <Grid xs={12} sm={6} md={3}>
-                <Typography className=' pb-5 cursor-pointer' variant='h5'> Company </Typography>
+                <Typography className=' pb-5' variant='h5'> Company </Typography>
                 <Typography className=' pb-5 cursor-pointer' variant='h6'> About </Typography>
                 <Typography className=' pb-5 cursor-pointer' variant='h6'> Blog </Typography>
                 <Typography className=' pb-5 cursor-pointer' variant='h6'> Investors </Typography>
