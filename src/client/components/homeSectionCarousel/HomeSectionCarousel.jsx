@@ -5,8 +5,8 @@ import HomeSectionCard from "../homeSectionCard/HomeSectionCard";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { Button } from "@mui/material";
 
-const HomeSectionCarousel = ({data,sectionName}) => {
-    const carousel = useRef(null);
+const HomeSectionCarousel = ({ data, sectionName }) => {
+  const carousel = useRef(null);
   const responsive = {
     0: { items: 1 },
     720: { items: 3 },
@@ -16,13 +16,15 @@ const HomeSectionCarousel = ({data,sectionName}) => {
     .slice(0, 10)
     .map((item) => <HomeSectionCard product={item} />);
 
-    const slidePrev=() => carousel.current.slidePrev();
-    const slideNext=() => carousel.current.slideNext();
+  const slidePrev = () => carousel.current.slidePrev();
+  const slideNext = () => carousel.current.slideNext();
 
   return (
     <div className="border rounded-lg">
       <div className="relative p-5">
-        <h2 className=" text-2xl font-extrabold text-gray-800 py-5">{sectionName}</h2>
+        <h2 className=" text-2xl font-extrabold text-gray-800 py-5">
+          {sectionName}
+        </h2>
         <AliceCarousel
           items={items}
           responsive={responsive}
@@ -31,23 +33,23 @@ const HomeSectionCarousel = ({data,sectionName}) => {
           ref={carousel}
         />
         <Button
-            variant="contained"
-            aria-label="next"
-            onClick={slideNext}
-            className="z-50"
-            sx={{
-              position: "absolute",
-              top: "12rem",
-              right: "0rem",
-              transform: "translateX(50%) rotate(90deg)",
-              bgcolor: "white",
-              zIndex:1,
-            }}
-          >
-            <KeyboardArrowLeftIcon
-              sx={{ transform: "rotate(90deg)", color: "black" }}
-            />
-          </Button>
+          variant="contained"
+          aria-label="next"
+          onClick={slideNext}
+          className="z-50"
+          sx={{
+            position: "absolute",
+            top: "12rem",
+            right: "0rem",
+            transform: "translateX(50%) rotate(90deg)",
+            bgcolor: "white",
+            zIndex: 1,
+          }}
+        >
+          <KeyboardArrowLeftIcon
+            sx={{ transform: "rotate(90deg)", color: "black" }}
+          />
+        </Button>
         <Button
           variant="contained"
           onClick={slidePrev}
@@ -58,7 +60,7 @@ const HomeSectionCarousel = ({data,sectionName}) => {
             left: "0rem",
             transform: "translateX(-50%) rotate(90deg)",
             bgcolor: "white",
-            zIndex:1,
+            zIndex: 1,
           }}
         >
           <KeyboardArrowLeftIcon
