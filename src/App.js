@@ -1,8 +1,9 @@
 // import { Route, Routes } from 'react-router-dom';
 // import Cart from './client/components/cart/Cart';
-import Checkout from './client/components/checkout/Checkout';
+// import Checkout from './client/components/checkout/Checkout';
 import Footer from './client/components/footer/Footer';
 import Navigation from './client/components/navigation/Navigation';
+import Order from './client/components/order/Order';
 // import ProductDetalis from './client/components/productDetails/ProductDetails';
 // import Product from './client/components/products/Product';
 // import { HomePage } from './client/pages/homePage/HomePage';
@@ -22,7 +23,8 @@ function App() {
        <Product/> */}
         {/* <ProductDetalis/> */}
        {/* <Cart/> */}
-       <Checkout/>
+       {/* <Checkout/> */}
+       <Order/>
       </div>
       <Footer/>
     </div>
