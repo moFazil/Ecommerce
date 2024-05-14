@@ -9,6 +9,7 @@ import {
 
 import { Avatar, Button, Menu, MenuItem } from "@mui/material";
 import { navigation } from "./NavigationData";
+import { useNavigate } from "react-router-dom";
 // import {Link} from "react-router-dom";
 
 function classNames(...classes) {
@@ -17,6 +18,7 @@ function classNames(...classes) {
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
   // const { auth, cart } = useSelector((store) => store);
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -35,6 +37,11 @@ export default function Navigation() {
   const handleClose = () => {
     setOpenAuthModal(false);
   };
+
+  const handleCategoryClick=(category,section,item,close)=>{
+    navigate(`/${category.id}/${section.id}/${item.id}`);
+    close();
+  }
 
   return (
     <div className="bg-white pb-10">
@@ -320,7 +327,16 @@ export default function Navigation() {
                                                 key={item.name}
                                                 className="flex"
                                               >
-                                                <p className="cursor-pointer hover:text-gray-800">
+                                                <p
+                                                onClick={()=>
+                                                  handleCategoryClick(
+                                                    category,
+                                                    section,
+                                                    item,
+                                                    close
+                                                  )
+                                                }
+                                                className="cursor-pointer hover:text-gray-800">
                                                   {item.name}
                                                 </p>
                                               </li>

@@ -1,9 +1,10 @@
-// import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 // import Cart from './client/components/cart/Cart';
 // import Checkout from './client/components/checkout/Checkout';
-import Footer from './client/components/footer/Footer';
-import Navigation from './client/components/navigation/Navigation';
-import OrderDetails from './client/components/order/OrderDetails';
+import ClientRouters from './client/Routers/ClientRouters';
+// import Footer from './client/components/footer/Footer';
+// import Navigation from './client/components/navigation/Navigation';
+// import OrderDetails from './client/components/order/OrderDetails';
 // import Order from './client/components/order/Order';
 // import ProductDetalis from './client/components/productDetails/ProductDetails';
 // import Product from './client/components/products/Product';
@@ -12,10 +13,10 @@ import OrderDetails from './client/components/order/OrderDetails';
 function App() {
   return (
     <div className="App">
-      <div>
-      <Navigation/>
-      </div>
-      <div>
+      <Routes>
+        <Route path='/*' element={<ClientRouters/>}/>
+      </Routes>
+        
         {/* <Routes>
           <Route path='/' element={<HomePage/>}/>
           <Route path='/product' element={<Product/>}/>
@@ -26,9 +27,7 @@ function App() {
        {/* <Cart/> */}
        {/* <Checkout/> */}
        {/* <Order/> */}
-       <OrderDetails/>
-      </div>
-      <Footer/>
+       {/* <OrderDetails/> */}
     </div>
   );
 }
