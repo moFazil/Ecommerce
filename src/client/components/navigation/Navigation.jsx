@@ -228,7 +228,7 @@ export default function Navigation() {
               </button>
 
               {/* Logo */}
-              <div className="ml-4 flex lg:ml-0">
+              <div onClick={()=>navigate("/")} className="ml-4 flex lg:ml-0">
                 <img
                   src="https://ik.imagekit.io/orm5ahbvhz/D-similar/D%20similar.png?updatedAt=1714729885187"
                   alt="logo"
@@ -401,7 +401,8 @@ export default function Navigation() {
                         "aria-labelledby": "basic-button",
                       }}
                     >
-                      <MenuItem></MenuItem>
+                      <MenuItem onClick={handleCloseUserMenu}>Profile</MenuItem>
+                      <MenuItem onClick={()=>navigate("/account/orders")}>My Orders</MenuItem>
                       <MenuItem>Logout</MenuItem>
                     </Menu>
                   </div>
@@ -428,7 +429,7 @@ export default function Navigation() {
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                  <Button className="group -m-2 flex items-center p-2">
+                  <Button onClick={()=>navigate("/cart")} className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"

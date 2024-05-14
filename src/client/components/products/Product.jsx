@@ -521,7 +521,7 @@ export default function Product() {
               <div className="lg:col-span-4 w-full">
                 <div className="flex flex-wrap justify-center bg-white py-5">
                   {mens_kurta.map((item, index) => (
-                    <ProductCard key={index} Product={item} />
+                    <ProductCard key={index} product={item} />
                   ))}
                 </div>
               </div>

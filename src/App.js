@@ -1,33 +1,12 @@
-import { Route, Routes } from 'react-router-dom';
-// import Cart from './client/components/cart/Cart';
-// import Checkout from './client/components/checkout/Checkout';
-import ClientRouters from './client/Routers/ClientRouters';
-// import Footer from './client/components/footer/Footer';
-// import Navigation from './client/components/navigation/Navigation';
-// import OrderDetails from './client/components/order/OrderDetails';
-// import Order from './client/components/order/Order';
-// import ProductDetalis from './client/components/productDetails/ProductDetails';
-// import Product from './client/components/products/Product';
-// import { HomePage } from './client/pages/homePage/HomePage';
+import { Route, Routes } from "react-router-dom";
+import ClientRouters from "./client/Routers/ClientRouters";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/*' element={<ClientRouters/>}/>
+        <Route path="/*" element={<ClientRouters />} />
       </Routes>
-        
-        {/* <Routes>
-          <Route path='/' element={<HomePage/>}/>
-          <Route path='/product' element={<Product/>}/>
-        </Routes> */}
-        {/* <HomePage/> 
-       <Product/> */}
-        {/* <ProductDetalis/> */}
-       {/* <Cart/> */}
-       {/* <Checkout/> */}
-       {/* <Order/> */}
-       {/* <OrderDetails/> */}
     </div>
   );
 }

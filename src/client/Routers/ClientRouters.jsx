@@ -5,7 +5,10 @@ import Footer from '../components/footer/Footer';
 import { HomePage } from '../pages/homePage/HomePage';
 import Cart from '../components/cart/Cart';
 import Product from '../components/products/Product';
-import ProductCard from '../components/products/ProductCard';
+import ProductDetalis from '../components/productDetails/ProductDetails';
+import Checkout from '../components/checkout/Checkout'
+import Order from '../components/order/Order';
+import OrderDetails from '../components/order/OrderDetails';
 
 const ClientRouters = () => {
   return (
@@ -17,7 +20,10 @@ const ClientRouters = () => {
             <Route path='/' element={<HomePage/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/:levelOne/:levelTwo/:levelThree' element={<Product/>}/>
-            {/* <Route path='/product/:productId' element={<ProductCard/>}/> */}
+            <Route path='/product/:productId' element={<ProductDetalis/>}/>
+            <Route path='/checkout' element={<Checkout/>}/>
+            <Route path='/account/orders' element={<Order/>}/>            
+            <Route path='/account/orders/:orderId' element={<OrderDetails/>}/>
         </Routes>
 
         <div>
