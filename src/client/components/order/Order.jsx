@@ -24,18 +24,23 @@ const Order = () => {
                     type="checkbox"
                     className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
                   />
-                  <label htmlFor={option.value} className="ml-3 text-sm text-gray-600">{option.label}</label>
+                  <label
+                    htmlFor={option.value}
+                    className="ml-3 text-sm text-gray-600"
+                  >
+                    {option.label}
+                  </label>
                 </div>
               ))}
             </div>
           </div>
         </Grid>
         <Grid item xs={9}>
-            <div className=" space-y-5">
-            {[1,1,1,1,1,1].map((item)=>
-              <OrderCard/>
-            )}
-            </div>
+          <div className=" space-y-5">
+            {[1, 1, 1, 1, 1, 1].map(() => (
+              <OrderCard />
+            ))}
+          </div>
         </Grid>
       </Grid>
     </div>

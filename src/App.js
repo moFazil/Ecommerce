@@ -3,7 +3,8 @@
 // import Checkout from './client/components/checkout/Checkout';
 import Footer from './client/components/footer/Footer';
 import Navigation from './client/components/navigation/Navigation';
-import Order from './client/components/order/Order';
+import OrderDetails from './client/components/order/OrderDetails';
+// import Order from './client/components/order/Order';
 // import ProductDetalis from './client/components/productDetails/ProductDetails';
 // import Product from './client/components/products/Product';
 // import { HomePage } from './client/pages/homePage/HomePage';
@@ -24,7 +25,8 @@ function App() {
         {/* <ProductDetalis/> */}
        {/* <Cart/> */}
        {/* <Checkout/> */}
-       <Order/>
+       {/* <Order/> */}
+       <OrderDetails/>
       </div>
       <Footer/>
     </div>
