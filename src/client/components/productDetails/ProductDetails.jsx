@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import { Box, Button, Grid, LinearProgress, Rating } from "@mui/material";
 import ProductReviewCard from "./ProductReviewCard";
 import { mens_kurta } from "../../../Data/Mens_Kurta";
 import HomeSectionCard from "../homeSectionCard/HomeSectionCard";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { findProductsById } from "../../../State/product/Action";
+import { addItemToCart } from "../../../State/cart/Action";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -54,19 +57,39 @@ const product = {
   details:
     'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
 };
-const reviews = { href: "#", average: 4, totalCount: 117 };
+// const reviews = { href: "#", average: 4, totalCount: 117 };
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function ProductDetalis() {
-  const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
+  const [selectedSize, setSelectedSize] = useState("");
   const navigate= useNavigate();
+  const params = useParams();
+  const dispatch = useDispatch();
+  const {products} = useSelector(store=>store)
+
+/*{
+  //Products Checking Console
+
+  console.log("productcheck : ",products)
+  console.log("product object: ", products.product);
+
+  console.log("params",params.productId);
+}*/
 
   const handleAddToCart=()=>{
+    const data = {productId:params.productId,size:selectedSize.name}
+    console.log("size data", data);
+    dispatch(addItemToCart(data))
     navigate("/cart")
   }
+
+  useEffect(()=>{
+    const data = {productId:params.productId}
+    dispatch(findProductsById(data))
+  },[dispatch, params.productId])
 
   return (
     <div className="bg-white lg:px-20">
@@ -104,7 +127,7 @@ export default function ProductDetalis() {
                 aria-current="page"
                 className="font-medium text-gray-500 hover:text-gray-600"
               >
-                {product.name}
+                {products.product?.category.name}
               </a>
             </li>
           </ol>
@@ -115,21 +138,19 @@ export default function ProductDetalis() {
           <div className="flex flex-col items-center">
             <div className=" overflow-hidden rounded-lg max-w-[30rem] max-h-[35rem]">
               <img
-                src={product.images[0].src}
-                alt={product.images[0].alt}
+                src={products.product?.imageUrl}
+                alt={products.product?.title}
                 className="h-full w-full object-cover object-center"
               />
             </div>
             <div className="flex flex-wrap justify-center space-x-5">
-              {product.images.map((item) => (
                 <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg max-w-[5rem] max-h-[5rem] mt-5">
                   <img
-                    src={item.src}
-                    alt={item.alt}
+                    src={products.product?.imageUrl}
+                    alt={products.product?.title}
                     className="h-full w-full object-cover object-center"
                   />
                 </div>
-              ))}
             </div>
           </div>
 
@@ -137,10 +158,10 @@ export default function ProductDetalis() {
           <div className="mx-auto lg:col-span-1 max-w-2xl px-4 pb-16 sm:px-6 lg:max-w-7xl lg:px-8 lg:pb-25">
             <div className="lg:col-span-2 ">
               <h1 className="text-lg lg:text-xl text-gray-900 font-semibold">
-                Universal Outfit
+                {products.product?.brand}
               </h1>
               <h1 className="text-lg lg:text-xl text-gray-900 opacity-60 pt-1">
-                Casual Puff Sleeves
+              {products.product?.title}
               </h1>
             </div>
 
@@ -148,9 +169,9 @@ export default function ProductDetalis() {
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               <h2 className="sr-only">Product information</h2>
               <div className=" flex space-x-3 text-gray-900 items-center mt-6 text-mf lg:text-lg">
-                <p className="font-semibold">₹199</p>
-                <p className="opacity-50 line-through">₹211</p>
-                <p className="text-red-600 font-semibold">5% Off</p>
+                <p className="font-semibold">{products.product?.discountPrice}</p>
+                <p className="opacity-50 line-through">{products.product?.price}</p>
+                <p className="text-red-600 font-semibold">{products.product?.discountPercent}% Off</p>
               </div>
 
               {/* Reviews */}
@@ -260,7 +281,7 @@ export default function ProductDetalis() {
 
                 <div className="space-y-6">
                   <p className="text-base text-gray-900">
-                    {product.description}
+                    {products.product?.description}
                   </p>
                 </div>
               </div>

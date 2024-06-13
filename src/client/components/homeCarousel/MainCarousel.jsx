@@ -11,12 +11,12 @@ export const MainCarousel = () => {
     <div>
       <AliceCarousel
         animationType="fadeout"
-        animationDuration={1000}
+        animationDuration={2000}
         disableButtonsControls
         infinite
         items={items}
         autoPlay
-        autoPlayInterval={1500}
+        autoPlayInterval={2300}
       />
     </div>
   );

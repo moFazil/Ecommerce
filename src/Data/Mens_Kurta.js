@@ -572,7 +572,7 @@ export const mens_kurta = [
   {
     imageUrl:
       "https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/l/9/r/xxl-ksh-p-kurta-yellow-ksh-trendz-original-imafyq4h7q5gpkzk-bb.jpeg?q=70",
-    brand: "KSH Trendz",
+    brand: "Levi",
     title: "Men Solid Cotton Blend Straight Kurta",
     color: "Yellow",
     discountedPrice: 363,
