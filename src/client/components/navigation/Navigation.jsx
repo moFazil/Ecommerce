@@ -53,7 +53,7 @@ export default function Navigation() {
     if(jwt){
       dispatch(getUser(jwt))
     }
-  },[jwt,auth.jwt])
+  },[jwt, auth.jwt, dispatch])
 
   useEffect(()=>{
 
@@ -64,7 +64,7 @@ export default function Navigation() {
       navigate(-1);
     }
 
-  },[auth.user])
+  },[auth.user, location.pathname, navigate])
 
   const handleLogout = ()=>{
     dispatch(logout());

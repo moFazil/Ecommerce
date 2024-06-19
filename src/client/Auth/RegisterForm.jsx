@@ -14,7 +14,7 @@ const RegisterForm = () => {
     if(jwt){
       dispatch(getUser(jwt))
     }
-  },[jwt,auth.jwt])
+  },[jwt, auth.jwt, dispatch])
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -89,7 +89,7 @@ const RegisterForm = () => {
       <div className=" flex justify-center flex-col items-center">
         <div className=" py-3 flex items-center">
           <p>Already have an account ? </p>
-          <Button onClick={()=>navigate("/login")} size="small" sx={{mt:"5px",ml:"5px"}}>Login</Button>
+          <Button onClick={()=>navigate('/login')} size="small" sx={{mt:"5px",ml:"5px"}}>Login</Button>
         </div>
       </div>
     </div>
