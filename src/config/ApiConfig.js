@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const BASE_API_URL = "testdb-production-bad0.up.railway.app"
+export const BASE_API_URL = "https://testdb-production-2d49.up.railway.app"
 
 const jwt = localStorage.getItem("jwt")
 
