@@ -9,7 +9,7 @@ import AddressCard from "../addressCard/AddressCard";
 
 const PaymentSuccess = () => {
   const [paymentId, setPaymentId] = useState();
-  const [referenceId, setReferenceId] = useState();
+  // const [referenceId, setReferenceId] = useState();
   const [paymentStatus, setPaymentStatus] = useState();
   const { orderId } = useParams();
 

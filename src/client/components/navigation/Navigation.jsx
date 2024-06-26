@@ -1,4 +1,3 @@
-import { Fragment, useEffect, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -6,13 +5,14 @@ import {
   ShoppingBagIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { Fragment, useEffect, useState } from "react";
 
 import { Avatar, Button, Menu, MenuItem } from "@mui/material";
-import { navigation } from "./NavigationData";
-import { useLocation, useNavigate } from "react-router-dom";
-import AuthModal from "../../Auth/AuthModal";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
 import { getUser, logout } from "../../../State/Auth/Action";
+import AuthModal from "../../Auth/AuthModal";
+import { navigation } from "./NavigationData";
 // import {Link} from "react-router-dom";
 
 function classNames(...classes) {
@@ -64,7 +64,7 @@ export default function Navigation() {
       navigate(-1);
     }
 
-  },[auth.user])
+  },[auth.user, location.pathname, navigate])
 
   const handleLogout = ()=>{
     dispatch(logout());
