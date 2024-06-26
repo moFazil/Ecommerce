@@ -119,7 +119,7 @@ export default function Product() {
       minDiscount: discountValue || 0,
       sort: sortValue || "price_low",
       pageNumber: pageNumberValue - 1,
-      pageSize: 6,
+      pageSize: 8,
       stock: stockValue,
     };
     dispatch(findProducts(data));
@@ -432,7 +432,7 @@ export default function Product() {
               Products
             </h2>
 
-            <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
+            <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
               {/* Filters */}
               <div>
                 <h1 className=" text-lg opacity-50 font-bold">Filters</h1>
@@ -570,7 +570,7 @@ export default function Product() {
                 </form>
               </div>
 
-              <div className="lg:col-span-4 w-full">
+              <div className="lg:col-span-3 w-full">
                 <div className="flex flex-wrap justify-center bg-white py-5">
                   {products.products &&
                     products.products?.content?.map((item, index) => (

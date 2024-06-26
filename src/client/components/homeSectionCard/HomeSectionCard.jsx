@@ -1,11 +1,9 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 
 const HomeSectionCard = ({ product }) => {
   return (
     <div className=" cursor-pointer flex flex-col items-center rounded-lg shadow-lg bg-white overflow-hidden w-[15rem] mx-3 border">
       <div className=" w-[10rem] h-[13rem]">
-        {/* <Link to={`/product`}> */}
         <img
           src={product.imageUrl}
           alt="fashion"

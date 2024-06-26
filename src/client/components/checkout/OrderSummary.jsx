@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { getOrderById } from "../../../State/order/Action";
 import CartItem from "../cart/CartItem";
+import { createPayment } from "../../../State/payment/Action";
 
 const OrderSummary = () => {
 
@@ -18,6 +19,14 @@ const OrderSummary = () => {
 
     dispatch(getOrderById(orderId))
   },[dispatch,orderId])
+
+  const handleCheckout=()=>{
+    if (orderId) {
+      dispatch(createPayment(orderId));
+  } else {
+      console.error("Order ID not found");
+  }
+  }
 
   return (
     <div>
@@ -65,6 +74,7 @@ const OrderSummary = () => {
                   mt: "2rem",
                   bgcolor: "#662D92",
                 }}
+                onClick={handleCheckout}
               >
                 Checkout
               </Button>

@@ -57,7 +57,6 @@ const product = {
   details:
     'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
 };
-// const reviews = { href: "#", average: 4, totalCount: 117 };
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -69,15 +68,6 @@ export default function ProductDetalis() {
   const params = useParams();
   const dispatch = useDispatch();
   const {products} = useSelector(store=>store)
-
-/*{
-  //Products Checking Console
-
-  console.log("productcheck : ",products)
-  console.log("product object: ", products.product);
-
-  console.log("params",params.productId);
-}*/
 
   const handleAddToCart=()=>{
     const data = {productId:params.productId,size:selectedSize.name}

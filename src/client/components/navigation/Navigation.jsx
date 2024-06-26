@@ -64,7 +64,7 @@ export default function Navigation() {
       navigate(-1);
     }
 
-  },[auth.user, location.pathname, navigate])
+  },[auth.user])
 
   const handleLogout = ()=>{
     dispatch(logout());
