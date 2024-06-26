@@ -363,8 +363,8 @@ export default function Product() {
               Products
             </h1>
 
-            <div className="flex items-center">
-              <Menu as="div" className="relative inline-block text-left">
+           {/* <div className="flex items-center">
+               <Menu as="div" className="relative inline-block text-left">
                 <div>
                   <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
                     Sort
@@ -424,8 +424,8 @@ export default function Product() {
                 <span className="sr-only">Filters</span>
                 <FunnelIcon className="h-5 w-5" aria-hidden="true" />
               </button>
-            </div>
-          </div>
+            </div>*/}
+          </div> 
 
           <section aria-labelledby="products-heading" className="pb-24 pt-6">
             <h2 id="products-heading" className="sr-only">
